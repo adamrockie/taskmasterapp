@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskMaster</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <h1>TaskMaster</h1>
+    
+    <!-- Task Form -->
+    <div id="task-form">
+      <input type="text" id="task-title" placeholder="Task Title">
+      <input type="text" id="task-description" placeholder="Description">
+      <input type="date" id="task-deadline">
+      <select id="task-priority">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button onclick="createTask()">Add Task</button>
+    </div>
+
+    <!-- Search and Filter Options -->
+    <div id="filters">
+      <input type="text" id="search-bar" placeholder="Search tasks..." oninput="filterTasks()">
+      <select id="sort-by" onchange="sortTasks()">
+        <option value="">Sort by</option>
+        <option value="priority">Priority</option>
+        <option value="deadline-asc">Deadline (Earliest First)</option>
+        <option value="deadline-desc">Deadline (Latest First)</option>
+      </select>
+      <select id="filter-priority" onchange="filterTasks()">
+        <option value="">Filter by Priority</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+
+    <!-- Task List -->
+    <div id="task-list"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
